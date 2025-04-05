@@ -17,15 +17,15 @@ public class InMemoryEmployeeRepository {
 		DATABASE_EMPLOYEES.add(new Employee(3, "Luke", "Bray", "luke@gmail.com"));
 	}
 	
-	void addEmployee(Employee employee) {
+	public void addEmployee(Employee employee) {
 		DATABASE_EMPLOYEES.add(employee);
 	};
 
-	List<Employee> getAllEmployees() {
+	public List<Employee> getAllEmployees() {
 		return List.copyOf(DATABASE_EMPLOYEES);
 	};
 	
-	Employee findById(Integer id) {
+	public Employee findById(Integer id) {
 		return DATABASE_EMPLOYEES
 				.stream()
 				.filter(epm -> id.equals(epm.getId()))
@@ -33,7 +33,7 @@ public class InMemoryEmployeeRepository {
 				.orElseThrow();
 	};
 	
-	void updateEmployee(Employee employee) {
+	public void updateEmployee(Employee employee) {
 		Employee employeeForUpdate = findById(employee.getId());
 		employeeForUpdate.setFirstName(employee.getFirstName());
 		employeeForUpdate.setLastName(employee.getLastName());
@@ -42,7 +42,7 @@ public class InMemoryEmployeeRepository {
 		addEmployee(employeeForUpdate);
 	};
 	
-	Boolean deleteById(Integer id) {
+	public Boolean deleteById(Integer id) {
 		Employee epmloyee = DATABASE_EMPLOYEES
 				.stream()
 				.filter(epm -> id.equals(epm.getId()))
