@@ -7,7 +7,7 @@ import com.khlebnikovevgeniy.securitycrudapi.model.Employee;
 public interface EmployeeService {
 	
 	//Save an employee
-	void addEmployee(Employee employee);
+	Employee addEmployee(Employee employee);
 	
 	//Get employees
 	List<Employee> getAllEmployees();
@@ -16,7 +16,7 @@ public interface EmployeeService {
 	Employee findById(Integer id);
 	
 	//Update employee
-	void updateEmployee(Employee employee);
+	Employee updateEmployee(Employee employee);
 	
 	//Delete employee
 	Boolean deleteById(Integer id);

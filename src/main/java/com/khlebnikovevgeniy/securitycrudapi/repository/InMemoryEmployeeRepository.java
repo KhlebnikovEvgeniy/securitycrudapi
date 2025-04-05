@@ -17,8 +17,9 @@ public class InMemoryEmployeeRepository {
 		DATABASE_EMPLOYEES.add(new Employee(3, "Luke", "Bray", "luke@gmail.com"));
 	}
 	
-	public void addEmployee(Employee employee) {
+	public Employee addEmployee(Employee employee) {
 		DATABASE_EMPLOYEES.add(employee);
+		return employee;
 	};
 
 	public List<Employee> getAllEmployees() {
@@ -33,13 +34,14 @@ public class InMemoryEmployeeRepository {
 				.orElseThrow();
 	};
 	
-	public void updateEmployee(Employee employee) {
+	public Employee updateEmployee(Employee employee) {
 		Employee employeeForUpdate = findById(employee.getId());
 		employeeForUpdate.setFirstName(employee.getFirstName());
 		employeeForUpdate.setLastName(employee.getLastName());
 		employeeForUpdate.setEmail(employee.getEmail());
 		deleteById(employee.getId());
 		addEmployee(employeeForUpdate);
+		return employee;
 	};
 	
 	public Boolean deleteById(Integer id) {
