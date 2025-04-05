@@ -7,5 +7,4 @@ import com.khlebnikovevgeniy.securitycrudapi.model.Employee;
 
 @Repository
 public interface JpaEmployeeRepository extends JpaRepository<Employee, Integer> {
-
 }
