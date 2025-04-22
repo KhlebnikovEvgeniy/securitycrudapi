@@ -1,16 +1,28 @@
+#spring:
+#    datasource:
+#        url: jdbc:mysql://localhost:3306/securitycrudapi
+#        username: root
+#        password: letmein
+#    jpa:
+#        database-platform: org.springframework.orm.jpa.vendor.Database.MYSQL
+#        generate-ddl: true
+#        show-sql: true
+#        hibernate:
+#            ddl-auto: update
+#        properties:
+#            hibernate:
+#                globally_quoted_identifiers: true
+#                dialect: org.hibernate.dialect.MySQL8Dialect
+#                format_sql: true
+
 spring:
-    datasource:
-        url: jdbc:mysql://localhost:3306/userservice
-        username: root
-        password: letmein
-    jpa:
-        database-platform: org.springframework.orm.jpa.vendor.Database.MYSQL
-        generate-ddl: true
-        show-sql: true
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                globally_quoted_identifiers: true
-                dialect: org.hibernate.dialect.MySQL8Dialect
-                format_sql: true
+  profiles:
+    active: ${ACTIVE_PROFILE:devpostgres}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/securitycrudapi
+    username: postgres
+    password: letmein
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
