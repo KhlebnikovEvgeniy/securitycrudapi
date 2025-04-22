@@ -2,6 +2,7 @@ package com.khlebnikovevgeniy.securitycrudapi.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.khlebnikovevgeniy.securitycrudapi.model.Employee;
@@ -12,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
+@Qualifier(value = "inMemoryEmployeeService")
 public class InMemoryEmployeeServiceImpl implements EmployeeService {
 	
 	private final InMemoryEmployeeRepository inMemoryEmployeeRepository;
