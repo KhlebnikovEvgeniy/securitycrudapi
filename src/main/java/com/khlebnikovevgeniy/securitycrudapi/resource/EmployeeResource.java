@@ -5,6 +5,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import java.net.URI;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +22,16 @@ import com.khlebnikovevgeniy.securitycrudapi.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RequestMapping(path = "/api/employees")
 public class EmployeeResource {
-	private final EmployeeService employeeService;
 	
+	private final EmployeeService employeeService;
+		
+	public EmployeeResource(@Qualifier(value = "jpaEmployeeService") EmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
+
 	@GetMapping
 	public ResponseEntity<List<Employee>> getEmployees() {
 		return ResponseEntity.ok(employeeService.getAllEmployees());
@@ -55,4 +61,5 @@ public class EmployeeResource {
 	private URI getLocation(Integer id) {
 		return fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();
 	}
+
 }
