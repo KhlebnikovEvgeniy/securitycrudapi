@@ -19,11 +19,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @EnableMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebSecurityConfiguration {
+	private final AccountAuthenticationProvider accountAuthenticationProvider;
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-		authenticationManagerBuilder.authenticationProvider(null);
+		authenticationManagerBuilder.authenticationProvider(accountAuthenticationProvider);
 		http.csrf(csrf -> csrf.disable());
 		http.authorizeHttpRequests((authz) -> authz
 			        .requestMatchers(POST, "/api/accounts/**").hasAnyRole("ADMIN", "USER")
