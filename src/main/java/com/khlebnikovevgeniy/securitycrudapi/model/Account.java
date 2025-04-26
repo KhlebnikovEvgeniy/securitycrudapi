@@ -32,7 +32,7 @@ public class Account {
 	private Long id;
 	@Column(unique = true)
     @NotNull
-	private String usermame;
+	private String username;
 	@JsonProperty(access = WRITE_ONLY)
     @NotNull
 	private String password;
