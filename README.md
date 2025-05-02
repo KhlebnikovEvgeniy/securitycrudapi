@@ -3,6 +3,7 @@ Spring Boot API with Spring Security and Docker
 
 
 ## Key Features
+Secure a REST API with Spring Boot and Spring Security. Deploy using Docker.
 
 ## Technologies Used
 
@@ -14,24 +15,20 @@ Spring Boot API with Spring Security and Docker
 
 **Framework**
 <img align="right" src="https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white" />
-<img align="right" src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=Spring&logoColor=white" />
+<img align="right" src="https://img.shields.io/badge/SpringBoot%203.4.4-6DB33F?style=flat-square&logo=Spring&logoColor=white" />
 
 **Security**
-<img align="right" src="https://img.shields.io/badge/JWT-000000?logo=JSON%20web%20tokens&logoColor=white" />
-<img align="right" src="https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?logo=JSON-Web-Tokens&logoColor=white" />
+<img align="right" src="https://img.shields.io/badge/Basic%20Auth-000000?logo=JSON%20web%20tokens&logoColor=white" />
 <img align="right" src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" />
 
 **Database**
-<img align="right" src="https://img.shields.io/badge/MySQL-005C84?style=flat&logo=mysql&logoColor=white" />
+<img align="right" src="https://img.shields.io/badge/MySQL%2017.0-005C84?style=flat&logo=mysql&logoColor=white" />
 
 **ORM**
 <img align="right" src="https://img.shields.io/badge/Hibernate-59666C?logo=Hibernate&logoColor=white" />
 
 **API Testing**
 <img align="right" src="https://img.shields.io/badge/Postman-FF6C37?logo=Postman&logoColor=white" />
-
-**Testing**
-<img align="right" src="https://img.shields.io/badge/JUnit5-25A162.svg?logo=JUnit5&logoColor=orange" />
 
 **Build Tools**
 <img align="right" src="https://img.shields.io/badge/Apache%20Maven-C71A36?logo=Apache%20Maven&logoColor=white" />
@@ -49,5 +46,3 @@ Spring Boot API with Spring Security and Docker
 **Libraries**
 <img align="right" src="https://img.shields.io/badge/Lombok-1.18.34-green" />
 
-
-# Functional Requirements
